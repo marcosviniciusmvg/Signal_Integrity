@@ -81,20 +81,20 @@ Coupon variations and objectives:
 - `2L_06 - CPWG 50 Ohm + vias + return path`: checks improvement from reinforcing return-current continuity around transitions.
 - `2L_07 - CPWG 50 Ohm + GND discontinuity (slot)`: measures degradation caused by intentional return-path interruption.
 
-Schematic:
-![2-layer schematic](./images/sch_2l.png)
+#### Schematic
+<img src="./images/sch_2l.png" alt="2-layer schematic" width="700">
 
-Stackup:
-![2-layer stackup](./images/stackup_2l.png)
+#### Stackup
+<img src="./images/stackup_2l.png" alt="2-layer stackup" width="700">
 
-PCB layout views:
+#### PCB layout views
 ![2-layer overview](./images/pcb_2d_2l.png)
 
 ![2-layer top](./images/pcb_2d_top_2l.png)
 
 ![2-layer bottom](./images/pcb_2d_bot_2l.png)
 
-3D view:
+#### 3D view
 ![2-layer 3D top](./images/pcb_3d_top_2l.png)
 
 ### 4-layer board (`Signal_Integrity_4L_Simplified`)
@@ -116,13 +116,13 @@ Coupon variations and objectives:
 - `4L_06 - Microstrip 50 Ohm + vias + return path`: verifies reflection/ripple reduction with improved return-current path near transitions.
 - `4L_07 - Microstrip 50 Ohm + GND discontinuity (slot on L2)`: measures sensitivity to intentional plane interruption in an inner reference layer.
 
-Schematic:
-![4-layer schematic](./images/sch_4l.png)
+#### Schematic
+<img src="./images/sch_4l.png" alt="4-layer schematic" width="700">
 
-Stackup:
-![4-layer stackup](./images/stackup_4l.png)
+#### Stackup
+<img src="./images/stackup_4l.png" alt="4-layer stackup" width="700">
 
-PCB layout views:
+#### PCB layout views
 ![4-layer top](./images/pcb_2d_top_4l.png)
 
 ![4-layer inner layer 2](./images/pcb_2d_ly2_4l.png)
@@ -131,7 +131,7 @@ PCB layout views:
 
 ![4-layer bottom](./images/pcb_2d_bot_4l.png)
 
-3D view:
+#### 3D view
 ![4-layer 3D top](./images/pcb_3d_top_4l.png)
 
 ## NanoVNA-F V2 in this project

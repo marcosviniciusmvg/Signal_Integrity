@@ -81,20 +81,20 @@ Variações de cupons e objetivos:
 - `2L_06 - CPWG 50 Ohm + vias + return path`: verifica melhoria ao reforçar continuidade de corrente de retorno nas transições.
 - `2L_07 - CPWG 50 Ohm + descontinuidade de GND (slot)`: mede degradação causada por interrupção intencional do caminho de retorno.
 
-Esquemático:
-![Esquemático 2 camadas](./images/sch_2l.png)
+#### Esquemático
+<img src="./images/sch_2l.png" alt="Esquemático 2 camadas" width="700">
 
-Stackup:
-![Stackup 2 camadas](./images/stackup_2l.png)
+#### Stackup
+<img src="./images/stackup_2l.png" alt="Stackup 2 camadas" width="700">
 
-Vistas de layout PCB:
+#### Vistas de layout PCB
 ![2 camadas visão geral](./images/pcb_2d_2l.png)
 
 ![2 camadas top](./images/pcb_2d_top_2l.png)
 
 ![2 camadas bottom](./images/pcb_2d_bot_2l.png)
 
-Vista 3D:
+#### Vista 3D
 ![2 camadas 3D top](./images/pcb_3d_top_2l.png)
 
 ### Placa 4 camadas (`Signal_Integrity_4L_Simplified`)
@@ -116,13 +116,13 @@ Variações de cupons e objetivos:
 - `4L_06 - Microstrip 50 Ohm + vias + return path`: verifica redução de reflexão/ripple com melhoria do caminho de retorno próximo das transições.
 - `4L_07 - Microstrip 50 Ohm + descontinuidade de GND (slot no L2)`: mede sensibilidade à interrupção intencional do plano de referência interno.
 
-Esquemático:
-![Esquemático 4 camadas](./images/sch_4l.png)
+#### Esquemático
+<img src="./images/sch_4l.png" alt="Esquemático 4 camadas" width="700">
 
-Stackup:
-![Stackup 4 camadas](./images/stackup_4l.png)
+#### Stackup
+<img src="./images/stackup_4l.png" alt="Stackup 4 camadas" width="700">
 
-Vistas de layout PCB:
+#### Vistas de layout PCB
 ![4 camadas top](./images/pcb_2d_top_4l.png)
 
 ![4 camadas camada interna 2](./images/pcb_2d_ly2_4l.png)
@@ -131,7 +131,7 @@ Vistas de layout PCB:
 
 ![4 camadas bottom](./images/pcb_2d_bot_4l.png)
 
-Vista 3D:
+#### Vista 3D
 ![4 camadas 3D top](./images/pcb_3d_top_4l.png)
 
 ## NanoVNA-F V2 neste projeto
