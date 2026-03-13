@@ -1,0 +1,204 @@
+*************************************************************
+FileName = Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Layer 1
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GBL
+
+    Adding Layer      : Bottom Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Signal
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.G2
+
+    Adding Layer      : Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Fab Notes
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GM1
+
+    Adding Layer      : Fab Notes
+
+
+Used DCodes :
+    D21
+    D26
+    D27
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GD1
+
+    Adding Drill Pair : Top Layer 1-Bottom Layer 1
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GG1
+
+    Adding Drill Pair : Top Layer 1-Bottom Layer 1
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Top Layer 1
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.GTL
+
+    Adding Layer      : Top Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : GND1
+      File : Gerber Files_Painel_Signal_Integrity_4L_2026-02-25.G1
+
+    Adding Layer      : GND1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+*************************************************************
+

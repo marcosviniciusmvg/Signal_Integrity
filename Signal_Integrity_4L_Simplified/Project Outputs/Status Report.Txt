@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Painel_Signal_Integrity_4L.PcbDoc]
+   Generated File[NC Drill Files_Painel_Signal_Integrity_4L_2026-02-25.TXT]
+   Generated File[NC Drill Files_Painel_Signal_Integrity_4L_2026-02-25.LDP]
+   Generated File[NC Drill Files_Painel_Signal_Integrity_4L_2026-02-25.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 16:49:28 On 25/02/2026
