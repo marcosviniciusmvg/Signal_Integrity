@@ -89,7 +89,9 @@ Stackup:
 
 PCB layout views:
 ![2-layer overview](./images/pcb_2d_2l.png)
+
 ![2-layer top](./images/pcb_2d_top_2l.png)
+
 ![2-layer bottom](./images/pcb_2d_bot_2l.png)
 
 3D view:
@@ -122,8 +124,11 @@ Stackup:
 
 PCB layout views:
 ![4-layer top](./images/pcb_2d_top_4l.png)
+
 ![4-layer inner layer 2](./images/pcb_2d_ly2_4l.png)
+
 ![4-layer inner layer 3](./images/pcb_2d_ly3_4l.png)
+
 ![4-layer bottom](./images/pcb_2d_bot_4l.png)
 
 3D view:
