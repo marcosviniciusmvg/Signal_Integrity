@@ -184,7 +184,6 @@ Official product page:
 
 Practical NanoVNA V2 guides:
 - [NanoVNA V2 Practical Guide (English)](./Nanovna_v2_pcb_en.md)
-- [NanoVNA V2 Practical Guide (Portuguese)](./Nanovna_v2_pcb.md)
 
 Device image:
 <br>

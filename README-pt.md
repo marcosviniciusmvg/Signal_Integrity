@@ -184,7 +184,6 @@ Página oficial do produto:
 
 Guias práticos NanoVNA V2:
 - [Apostila NanoVNA V2 (Português)](./Nanovna_v2_pcb.md)
-- [NanoVNA V2 Practical Guide (English)](./Nanovna_v2_pcb_en.md)
 
 Imagem do equipamento:
 <br>
