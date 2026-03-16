@@ -2,16 +2,28 @@
 
 [🇺🇸 English](./README-tests.md) | [🇧🇷 Português](./README-testes.md)
 
-## Introdução
-Projetar PCBs de RF e high speed com boa previsibilidade elétrica é desafiador porque a impedância real de uma trilha não depende apenas da largura da linha. O resultado final é fortemente influenciado por stackup, distância ao plano de referência, constante dielétrica efetiva, espessura de cobre, máscara de solda, transições de conector, vias e continuidade do caminho de retorno.
+[⬅ Voltar para o README Geral](./README-pt.md)
 
-Na prática, dois layouts visualmente parecidos podem apresentar comportamento muito diferente em `S11` e `S21` quando fabricados. Pequenas descontinuidades, como um slot no plano de GND ou uma mudança de retorno de corrente em região de via, podem gerar reflexão adicional, ripple e notch de transmissão, principalmente com o aumento da frequência.
-
-Por isso, o casamento de impedância precisa ser validado por medição, não apenas por cálculo ou simulador. Em sistemas RF e interfaces high speed, um mismatch recorrente degrada eficiência de transferência de energia, piora margem de sinal, aumenta sensibilidade a variações de processo e pode comprometer compliance elétrica do produto.
-
-Este roteiro foi criado para transformar o teste em um processo repetível e comparável entre cupons de 2 camadas e 4 camadas, permitindo correlacionar decisões de layout com desempenho medido. O foco é gerar dados objetivos para suportar decisões de projeto, reduzir iterações e aumentar a robustez de futuras placas.
-
----
+## Índice
+- [1. Escopo](#scope)
+- [1.1 Sub-placas (cupons 50 Ohm)](#included-coupons)
+- [2. Equipamentos, acessórios e configurações](#equipment-settings)
+- [2.1 Equipamentos](#equipment)
+- [2.2 Configuração de medição (padrão)](#measurement-setup)
+- [2.3 Calibração](#calibration)
+- [2.4 Condições de teste](#test-conditions)
+- [3. Critérios de avaliação](#evaluation-criteria)
+- [3.1 Métricas registradas](#recorded-metrics)
+- [3.2 Expectativas (hipóteses)](#expectations)
+- [4. Procedimento passo a passo (executado)](#procedure)
+- [4.1 Checklist pré-teste](#pretest-checklist)
+- [4.2 Sequência de medições](#measurement-sequence)
+- [4.3 Repetibilidade (recomendado)](#repeatability)
+- [5. Resultados - Tabela mestre](#results-master-table)
+- [6. Comparações e análise](#comparisons-analysis)
+- [7. Conclusões](#conclusions)
+- [8. Anexos](#attachments)
+- [9. Log de alterações do relatório](#report-change-log)
 
 **Projeto:** Cupons de Impedância 50 Ohm  
 **Responsável:** Marcos Vinicius Goncalves  
@@ -23,42 +35,42 @@ Este roteiro foi criado para transformar o teste em um processo repetível e com
 
 ---
 
+<a id="scope"></a>
 ## 1. Escopo
 
-### 1.1 Placas testadas
-- [ ] **PCB 4 camadas** (stackup: JLC04161H-3313)  
-- [ ] **PCB 2 camadas** (FR-4 padrão)
+<a id="included-coupons"></a>
+### 1.1 Sub-placas (cupons 50 Ohm)
 
-### 1.2 Cupons incluídos (somente 50 Ohm)
+Cada cupom é tratado como uma sub-placa independente (ID = PCB + número do cupom).
 
-#### PCB 4L (conforme silk/labels)
-1. Microstrip 50 Ohm baseline (W=350)
-2. CPWG 50 Ohm (W=285, G=200)
-3. CPWG 50 Ohm (W=210, G=120)
-4. CPWG 50 Ohm + matching (W=285, G=200)
-5. Microstrip 50 Ohm + vias
-6. Microstrip 50 Ohm + vias + return path
-7. Microstrip 50 Ohm + descontinuidade de GND (slot no L2)
-
-#### PCB 2L (conforme silk/labels)
-1. Microstrip 50 Ohm (W=2700)
-2. CPWG 50 Ohm baseline (W=800, G=200)
-3. CPWG 50 Ohm (W=380, G=120)
-4. CPWG 50 Ohm + matching (W=800, G=200)
-5. CPWG 50 Ohm + vias
-6. CPWG 50 Ohm + vias + return path
-7. CPWG 50 Ohm + descontinuidade de GND (slot)
+1. `4L_01` - Microstrip 50 Ohm baseline (W=350)
+2. `4L_02` - CPWG 50 Ohm (W=285, G=200)
+3. `4L_03` - CPWG 50 Ohm (W=210, G=120)
+4. `4L_04` - CPWG 50 Ohm + matching (W=285, G=200)
+5. `4L_05` - Microstrip 50 Ohm + vias
+6. `4L_06` - Microstrip 50 Ohm + vias + return path
+7. `4L_07` - Microstrip 50 Ohm + descontinuidade de GND (slot no L2)
+8. `2L_01` - Microstrip 50 Ohm (W=2700)
+9. `2L_02` - CPWG 50 Ohm baseline (W=800, G=200)
+10. `2L_03` - CPWG 50 Ohm (W=380, G=120)
+11. `2L_04` - CPWG 50 Ohm + matching (W=800, G=200)
+12. `2L_05` - CPWG 50 Ohm + vias
+13. `2L_06` - CPWG 50 Ohm + vias + return path
+14. `2L_07` - CPWG 50 Ohm + descontinuidade de GND (slot)
 
 ---
 
+<a id="equipment-settings"></a>
 ## 2. Equipamentos, acessórios e configurações
 
+<a id="equipment"></a>
 ### 2.1 Equipamentos
 - NanoVNA-F V2
 - PC com NanoVNA Saver
 - Cabos SMA macho-macho (qty: ___, modelo: ___)
 - Kit de calibração SMA: Open / Short / Load / Thru
 
+<a id="measurement-setup"></a>
 ### 2.2 Configuração de medição (padrão)
 - **Faixa:** Start = ___ MHz | Stop = ___ MHz  
 - **Pontos:** ___ (401 ou 801)  
@@ -66,12 +78,14 @@ Este roteiro foi criado para transformar o teste em um processo repetível e com
   - S11 LogMag (dB)
   - S21 LogMag (dB)
 
+<a id="calibration"></a>
 ### 2.3 Calibração
 - Tipo: **SOLT 2-port**
 - Local da calibração: **ponta dos cabos (plano de referência nos conectores SMA)**
 - Slot de calibração usado: ___
 - Observações: ___
 
+<a id="test-conditions"></a>
 ### 2.4 Condições de teste
 - Aperto SMA: [ ] mão consistente  [ ] torque (___ N.m)  
 - Adaptadores usados: [ ] não  [ ] sim (listar: ___)  
@@ -79,8 +93,10 @@ Este roteiro foi criado para transformar o teste em um processo repetível e com
 
 ---
 
+<a id="evaluation-criteria"></a>
 ## 3. Critérios de avaliação
 
+<a id="recorded-metrics"></a>
 ### 3.1 Métricas registradas
 Para cada cupom:
 - **S11 (Return Loss):**
@@ -90,6 +106,7 @@ Para cada cupom:
   - S21 em 1 GHz, 2 GHz, 3 GHz (dB)
   - presença de ripple/notch (sim/não + descrição)
 
+<a id="expectations"></a>
 ### 3.2 Expectativas (hipóteses)
 - **Baseline:** melhor S11 (mais negativo) e S21 mais suave.
 - **Vias vs Vias+RP:** vias+RP deve reduzir reflexão e ripple.
@@ -98,41 +115,44 @@ Para cada cupom:
 
 ---
 
+<a id="procedure"></a>
 ## 4. Procedimento passo a passo (executado)
 
+<a id="pretest-checklist"></a>
 ### 4.1 Checklist pré-teste
 - [ ] Inspeção visual (máscara, gap CPW, plano/slot, vias RP)
 - [ ] Conectores SMA bem soldados (sem solda invadindo gap)
 - [ ] Cabos sem folga mecânica (sem tracionar SMA)
 
+<a id="measurement-sequence"></a>
 ### 4.2 Sequência de medições
 
-**PCB 4L** (ordem):
-- [ ] 4L_01 Microstrip baseline
-- [ ] 4L_02 CPWG W285 G200
-- [ ] 4L_03 CPWG W210 G120
-- [ ] 4L_05 Microstrip + vias
-- [ ] 4L_06 Microstrip + vias + RP
-- [ ] 4L_07 Microstrip + GND desc (L2)
-- [ ] 4L_04 CPWG + matching (bypass)
+Ordem recomendada por sub-placa:
+- [ ] `4L_01` Microstrip baseline
+- [ ] `4L_02` CPWG W285 G200
+- [ ] `4L_03` CPWG W210 G120
+- [ ] `4L_05` Microstrip + vias
+- [ ] `4L_06` Microstrip + vias + RP
+- [ ] `4L_07` Microstrip + GND desc (L2)
+- [ ] `4L_04` CPWG + matching (bypass)
+- [ ] `2L_01` Microstrip
+- [ ] `2L_02` CPWG baseline W800 G200
+- [ ] `2L_03` CPWG W380 G120
+- [ ] `2L_05` CPWG + vias
+- [ ] `2L_06` CPWG + vias + RP
+- [ ] `2L_07` CPWG + GND desc
+- [ ] `2L_04` CPWG + matching (bypass)
 
-**PCB 2L** (ordem):
-- [ ] 2L_01 Microstrip
-- [ ] 2L_02 CPWG baseline W800 G200
-- [ ] 2L_03 CPWG W380 G120
-- [ ] 2L_05 CPWG + vias
-- [ ] 2L_06 CPWG + vias + RP
-- [ ] 2L_07 CPWG + GND desc
-- [ ] 2L_04 CPWG + matching (bypass)
-
+<a id="repeatability"></a>
 ### 4.3 Repetibilidade (recomendado)
-Selecionar 3 cupons por placa e repetir reconexão:
+Selecionar 3 sub-placas e repetir reconexão:
 - [ ] Baseline (R1, R2)
 - [ ] Vias (R1, R2)
 - [ ] GND desc (R1, R2)
 
 ---
 
+<a id="results-master-table"></a>
 ## 5. Resultados - Tabela mestre
 
 > Preencher esta tabela com os valores extraídos do NanoVNA Saver (ou manualmente).
@@ -156,6 +176,7 @@ Selecionar 3 cupons por placa e repetir reconexão:
 
 ---
 
+<a id="comparisons-analysis"></a>
 ## 6. Comparações e análise (preencher após medir)
 
 ### 6.1 Baseline - 4L vs 2L
@@ -190,6 +211,7 @@ Selecionar 3 cupons por placa e repetir reconexão:
 
 ---
 
+<a id="conclusions"></a>
 ## 7. Conclusões
 
 ### 7.1 Principais achados
@@ -211,6 +233,7 @@ Selecionar 3 cupons por placa e repetir reconexão:
 
 ---
 
+<a id="attachments"></a>
 ## 8. Anexos
 
 ### 8.1 Arquivos gerados
@@ -224,6 +247,7 @@ Selecionar 3 cupons por placa e repetir reconexão:
 
 ---
 
+<a id="report-change-log"></a>
 ## 9. Log de alterações do relatório
 | Data | Autor | Alteração |
 |---|---|---|

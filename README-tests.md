@@ -2,16 +2,28 @@
 
 [🇺🇸 English](./README-tests.md) | [🇧🇷 Português](./README-testes.md)
 
-## Introduction
-Designing RF and high-speed PCBs with predictable electrical behavior is challenging because real trace impedance does not depend only on trace width. Final behavior is strongly influenced by stackup, distance to the reference plane, effective dielectric constant, copper thickness, solder mask, connector transitions, vias, and return path continuity.
+[⬅ Back to General README](./README.md)
 
-In practice, two visually similar layouts can show very different `S11` and `S21` behavior after fabrication. Small discontinuities, such as a slot in the GND plane or a return-current path change around a via transition, can generate extra reflection, ripple, and transmission notch, especially as frequency increases.
-
-Because of that, impedance matching must be validated by measurement, not only by calculation or simulation. In RF systems and high-speed interfaces, recurring mismatch degrades power transfer efficiency, reduces signal margin, increases process sensitivity, and can compromise electrical compliance.
-
-This script was created to make testing repeatable and comparable between 2-layer and 4-layer coupons, enabling direct correlation between layout decisions and measured performance. The goal is to produce objective data that supports design decisions, reduces iteration cycles, and improves the robustness of future boards.
-
----
+## Index
+- [1. Scope](#scope)
+- [1.1 Sub-boards (50 Ohm coupons)](#included-coupons)
+- [2. Equipment, accessories, and settings](#equipment-settings)
+- [2.1 Equipment](#equipment)
+- [2.2 Measurement setup (default)](#measurement-setup)
+- [2.3 Calibration](#calibration)
+- [2.4 Test conditions](#test-conditions)
+- [3. Evaluation criteria](#evaluation-criteria)
+- [3.1 Recorded metrics](#recorded-metrics)
+- [3.2 Expectations (hypotheses)](#expectations)
+- [4. Step-by-step procedure (executed)](#procedure)
+- [4.1 Pre-test checklist](#pretest-checklist)
+- [4.2 Measurement sequence](#measurement-sequence)
+- [4.3 Repeatability (recommended)](#repeatability)
+- [5. Results - Master table](#results-master-table)
+- [6. Comparisons and analysis](#comparisons-analysis)
+- [7. Conclusions](#conclusions)
+- [8. Attachments](#attachments)
+- [9. Report change log](#report-change-log)
 
 **Project:** 50 Ohm Impedance Coupons  
 **Owner:** Marcos Vinicius Goncalves  
@@ -23,42 +35,42 @@ This script was created to make testing repeatable and comparable between 2-laye
 
 ---
 
+<a id="scope"></a>
 ## 1. Scope
 
-### 1.1 Tested boards
-- [ ] **4-layer PCB** (stackup: JLC04161H-3313)  
-- [ ] **2-layer PCB** (standard FR-4)
+<a id="included-coupons"></a>
+### 1.1 Sub-boards (50 Ohm coupons)
 
-### 1.2 Included coupons (50 Ohm only)
+Each coupon is treated as an independent sub-board (ID = PCB + coupon number).
 
-#### 4L PCB (as labeled on silkscreen)
-1. 50 Ohm microstrip baseline (W=350)
-2. 50 Ohm CPWG (W=285, G=200)
-3. 50 Ohm CPWG (W=210, G=120)
-4. 50 Ohm CPWG + matching (W=285, G=200)
-5. 50 Ohm microstrip + vias
-6. 50 Ohm microstrip + vias + return path
-7. 50 Ohm microstrip + GND discontinuity (slot on L2)
-
-#### 2L PCB (as labeled on silkscreen)
-1. 50 Ohm microstrip (W=2700)
-2. 50 Ohm CPWG baseline (W=800, G=200)
-3. 50 Ohm CPWG (W=380, G=120)
-4. 50 Ohm CPWG + matching (W=800, G=200)
-5. 50 Ohm CPWG + vias
-6. 50 Ohm CPWG + vias + return path
-7. 50 Ohm CPWG + GND discontinuity (slot)
+1. `4L_01` - Microstrip 50 Ohm baseline (W=350)
+2. `4L_02` - CPWG 50 Ohm (W=285, G=200)
+3. `4L_03` - CPWG 50 Ohm (W=210, G=120)
+4. `4L_04` - CPWG 50 Ohm + matching (W=285, G=200)
+5. `4L_05` - Microstrip 50 Ohm + vias
+6. `4L_06` - Microstrip 50 Ohm + vias + return path
+7. `4L_07` - Microstrip 50 Ohm + GND discontinuity (slot on L2)
+8. `2L_01` - Microstrip 50 Ohm (W=2700)
+9. `2L_02` - CPWG 50 Ohm baseline (W=800, G=200)
+10. `2L_03` - CPWG 50 Ohm (W=380, G=120)
+11. `2L_04` - CPWG 50 Ohm + matching (W=800, G=200)
+12. `2L_05` - CPWG 50 Ohm + vias
+13. `2L_06` - CPWG 50 Ohm + vias + return path
+14. `2L_07` - CPWG 50 Ohm + GND discontinuity (slot)
 
 ---
 
+<a id="equipment-settings"></a>
 ## 2. Equipment, accessories, and settings
 
+<a id="equipment"></a>
 ### 2.1 Equipment
 - NanoVNA-F V2
 - PC with NanoVNA Saver
 - SMA male-to-male cables (qty: ___, model: ___)
 - SMA calibration kit: Open / Short / Load / Thru
 
+<a id="measurement-setup"></a>
 ### 2.2 Measurement setup (default)
 - **Range:** Start = ___ MHz | Stop = ___ MHz  
 - **Points:** ___ (401 or 801)  
@@ -66,12 +78,14 @@ This script was created to make testing repeatable and comparable between 2-laye
   - S11 LogMag (dB)
   - S21 LogMag (dB)
 
+<a id="calibration"></a>
 ### 2.3 Calibration
 - Type: **SOLT 2-port**
 - Calibration location: **cable ends (reference plane at SMA connectors)**
 - Calibration slot used: ___
 - Notes: ___
 
+<a id="test-conditions"></a>
 ### 2.4 Test conditions
 - SMA tightening: [ ] consistent hand-tight  [ ] torque (___ N.m)  
 - Adapters used: [ ] no  [ ] yes (list: ___)  
@@ -79,8 +93,10 @@ This script was created to make testing repeatable and comparable between 2-laye
 
 ---
 
+<a id="evaluation-criteria"></a>
 ## 3. Evaluation criteria
 
+<a id="recorded-metrics"></a>
 ### 3.1 Recorded metrics
 For each coupon:
 - **S11 (Return Loss):**
@@ -90,6 +106,7 @@ For each coupon:
   - S21 at 1 GHz, 2 GHz, 3 GHz (dB)
   - ripple/notch presence (yes/no + description)
 
+<a id="expectations"></a>
 ### 3.2 Expectations (hypotheses)
 - **Baseline:** best S11 (more negative) and smoother S21.
 - **Vias vs Vias+RP:** vias+RP should reduce reflection and ripple.
@@ -98,41 +115,44 @@ For each coupon:
 
 ---
 
+<a id="procedure"></a>
 ## 4. Step-by-step procedure (executed)
 
+<a id="pretest-checklist"></a>
 ### 4.1 Pre-test checklist
 - [ ] Visual inspection (solder mask, CPW gap, plane/slot, RP vias)
 - [ ] SMA connectors properly soldered (no solder invading gap)
 - [ ] Cables without mechanical slack (no pulling on SMA)
 
+<a id="measurement-sequence"></a>
 ### 4.2 Measurement sequence
 
-**4L PCB** (order):
-- [ ] 4L_01 Microstrip baseline
-- [ ] 4L_02 CPWG W285 G200
-- [ ] 4L_03 CPWG W210 G120
-- [ ] 4L_05 Microstrip + vias
-- [ ] 4L_06 Microstrip + vias + RP
-- [ ] 4L_07 Microstrip + GND disc (L2)
-- [ ] 4L_04 CPWG + matching (bypass)
+Recommended order by sub-board:
+- [ ] `4L_01` Microstrip baseline
+- [ ] `4L_02` CPWG W285 G200
+- [ ] `4L_03` CPWG W210 G120
+- [ ] `4L_05` Microstrip + vias
+- [ ] `4L_06` Microstrip + vias + RP
+- [ ] `4L_07` Microstrip + GND disc (L2)
+- [ ] `4L_04` CPWG + matching (bypass)
+- [ ] `2L_01` Microstrip
+- [ ] `2L_02` CPWG baseline W800 G200
+- [ ] `2L_03` CPWG W380 G120
+- [ ] `2L_05` CPWG + vias
+- [ ] `2L_06` CPWG + vias + RP
+- [ ] `2L_07` CPWG + GND disc
+- [ ] `2L_04` CPWG + matching (bypass)
 
-**2L PCB** (order):
-- [ ] 2L_01 Microstrip
-- [ ] 2L_02 CPWG baseline W800 G200
-- [ ] 2L_03 CPWG W380 G120
-- [ ] 2L_05 CPWG + vias
-- [ ] 2L_06 CPWG + vias + RP
-- [ ] 2L_07 CPWG + GND disc
-- [ ] 2L_04 CPWG + matching (bypass)
-
+<a id="repeatability"></a>
 ### 4.3 Repeatability (recommended)
-Select 3 coupons per board and repeat reconnection:
+Select 3 sub-boards and repeat reconnection:
 - [ ] Baseline (R1, R2)
 - [ ] Vias (R1, R2)
 - [ ] GND disc (R1, R2)
 
 ---
 
+<a id="results-master-table"></a>
 ## 5. Results - Master table
 
 > Fill this table with values extracted from NanoVNA Saver (or manually).
@@ -156,6 +176,7 @@ Select 3 coupons per board and repeat reconnection:
 
 ---
 
+<a id="comparisons-analysis"></a>
 ## 6. Comparisons and analysis (fill after measurements)
 
 ### 6.1 Baseline - 4L vs 2L
@@ -190,6 +211,7 @@ Select 3 coupons per board and repeat reconnection:
 
 ---
 
+<a id="conclusions"></a>
 ## 7. Conclusions
 
 ### 7.1 Main findings
@@ -211,6 +233,7 @@ Select 3 coupons per board and repeat reconnection:
 
 ---
 
+<a id="attachments"></a>
 ## 8. Attachments
 
 ### 8.1 Generated files
@@ -224,6 +247,7 @@ Select 3 coupons per board and repeat reconnection:
 
 ---
 
+<a id="report-change-log"></a>
 ## 9. Report change log
 | Date | Author | Change |
 |---|---|---|
