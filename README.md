@@ -252,6 +252,5 @@ Main functions used/available (per official page):
 For complete test execution, measurement order, acceptance criteria, and result table, see:
 
 - [README-tests.md](./README-tests.md) (English)
-- [README-testes.md](./README-testes.md) (Portuguese)
 
 

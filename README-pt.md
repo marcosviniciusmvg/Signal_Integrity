@@ -251,7 +251,6 @@ Principais funções usadas/disponíveis (conforme página oficial):
 ## Testes (Roteiro e Relatório)
 Para execução completa dos testes, ordem de medição, critérios de avaliação e tabela de resultados, consulte:
 
-- [README-tests.md](./README-tests.md) (English)
 - [README-testes.md](./README-testes.md) (Português)
 
 

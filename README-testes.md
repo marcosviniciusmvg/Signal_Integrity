@@ -1,7 +1,5 @@
 ﻿# Roteiro e Relatório de Testes - PCBs de Impedância 50 Ohm (2L e 4L)
 
-[🇺🇸 English](./README-tests.md) | [🇧🇷 Português](./README-testes.md)
-
 [⬅ Voltar para o README Geral](./README-pt.md)
 
 ## Índice

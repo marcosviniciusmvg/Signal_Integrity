@@ -1,7 +1,5 @@
 ﻿# Test Script and Report - 50 Ohm Impedance PCBs (2L and 4L)
 
-[🇺🇸 English](./README-tests.md) | [🇧🇷 Português](./README-testes.md)
-
 [⬅ Back to General README](./README.md)
 
 ## Index
