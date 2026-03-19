@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760">
+  <rect width="100%" height="100%" fill="#0b1220"/>
+
+  <!-- Main chart circle -->
+  <circle cx="500" cy="380" r="300" fill="#111827" stroke="#60a5fa" stroke-width="4"/>
+
+  <!-- Real axis -->
+  <line x1="200" y1="380" x2="800" y2="380" stroke="#34d399" stroke-width="3"/>
+
+  <!-- Simplified constant resistance circles -->
+  <circle cx="650" cy="380" r="150" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="725" cy="380" r="75" fill="none" stroke="#60a5fa" stroke-width="2"/>
+
+  <!-- Simplified reactance arcs -->
+  <path d="M 500 80 Q 640 200 800 380" fill="none" stroke="#34d399" stroke-width="3"/>
+  <path d="M 500 680 Q 640 560 800 380" fill="none" stroke="#34d399" stroke-width="3"/>
+
+  <!-- Key points -->
+  <circle cx="200" cy="380" r="7" fill="#dc2626"/>
+  <circle cx="500" cy="380" r="7" fill="#dc2626"/>
+  <circle cx="800" cy="380" r="7" fill="#dc2626"/>
+
+  <!-- Labels -->
+  <text x="530" y="205" font-size="36" fill="#34d399" font-family="Arial, sans-serif" transform="rotate(-8 530 205)">
+    Região indutiva (+jX)
+  </text>
+  <text x="520" y="585" font-size="36" fill="#34d399" font-family="Arial, sans-serif" transform="rotate(8 520 585)">
+    Região capacitiva (-jX)
+  </text>
+
+  <text x="310" y="330" font-size="26" fill="#93c5fd" font-family="Arial, sans-serif">Re(z)=0</text>
+  <text x="630" y="330" font-size="26" fill="#93c5fd" font-family="Arial, sans-serif">Re(z)=1</text>
+  <text x="690" y="415" font-size="22" fill="#93c5fd" font-family="Arial, sans-serif">Re(z)=3</text>
+
+  <text x="220" y="430" font-size="34" fill="#f87171" font-family="Arial, sans-serif">z = 0 (curto)</text>
+  <text x="455" y="430" font-size="34" fill="#f87171" font-family="Arial, sans-serif">z = 1 (casado)</text>
+  <text x="705" y="430" font-size="34" fill="#f87171" font-family="Arial, sans-serif">z → ∞ (aberto)</text>
+</svg>

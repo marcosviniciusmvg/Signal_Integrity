@@ -152,6 +152,22 @@ S11 é ideal para:
 - validar o launch SMA → microstrip;
 - avaliar stub, filtro shunt, rede PI/T ou rede série-shunt.
 
+## 4.1.1 Carta de Smith — leitura rápida
+
+A Carta de Smith é uma forma gráfica de enxergar a impedância complexa normalizada (`R + jX`) e o coeficiente de reflexão.
+
+Interpretação prática rápida:
+- centro da carta: casamento (`Z = 50 ohms`, reflexão mínima);
+- lado esquerdo extremo: curto-circuito (`Z = 0`);
+- lado direito extremo: circuito aberto (`Z -> infinito`);
+- **parte superior da carta**: impedância com componente **indutiva** (`+jX`);
+- **parte inferior da carta**: impedância com componente **capacitiva** (`-jX`);
+- quanto mais perto da borda externa, maior o módulo da reflexão.
+
+Diagrama de apoio:
+
+![Carta de Smith - conceitos básicos](./images/smith_chart_conceitos.svg)
+
 ## 4.2 S21 — transmissão
 
 S21 mostra quanto sinal vai da porta 1 para a porta 2.
