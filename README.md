@@ -17,6 +17,7 @@
 - [Repository structure](#repository-structure)
 - [Project links](#project-links)
 - [Tests (Script and Report)](#tests-script-report)
+- [License](#license)
 
 <a id="overview"></a>
 ## Overview
@@ -100,13 +101,14 @@ Main characteristics:
 - Useful to evaluate tradeoffs between manufacturability/cost and RF/high-speed performance stability.
 
 Coupon variations and objectives:
-- `2L_01 - Microstrip 50 Ohm (W2700)`: baseline reference for 2-layer microstrip behavior.
-- `2L_02 - CPWG 50 Ohm baseline (W800/G200)`: baseline CPWG reference in 2L.
-- `2L_03 - CPWG 50 Ohm (W380/G120)`: CPWG geometry variant to compare confinement and process sensitivity versus G200.
-- `2L_04 - CPWG 50 Ohm + matching (W800/G200)`: evaluates matching strategy impact relative to CPWG baseline.
-- `2L_05 - CPWG 50 Ohm + vias`: quantifies transition-induced discontinuity and added reflection/ripple.
-- `2L_06 - CPWG 50 Ohm + vias + return path`: checks improvement from reinforcing return-current continuity around transitions.
-- `2L_07 - CPWG 50 Ohm + GND discontinuity (slot)`: measures degradation caused by intentional return-path interruption.
+- Notation guide: `W` = trace width and `G` = gap; when two `W` values are present, the first refers to the outer layer and the second to the inner layer.
+- `2L_01 - Microstrip 50 Ohm (W2700)`: baseline reference for 2-layer microstrip behavior (`W2700` = 2.7 mm trace width).
+- `2L_02 - CPWG 50 Ohm baseline (W800/G200)`: baseline CPWG reference in 2L (`W800/G200` = 0.8 mm trace width and 0.2 mm gap).
+- `2L_03 - CPWG 50 Ohm (W380/G120)`: CPWG geometry variant to compare confinement and process sensitivity versus G200 (`W380/G120` = 0.38 mm trace width and 0.12 mm gap).
+- `2L_04 - CPWG 50 Ohm + matching (W800/G200)`: evaluates matching strategy impact relative to CPWG baseline (`W800/G200` = 0.8 mm trace width and 0.2 mm gap).
+- `2L_05 - CPWG 50 Ohm + vias (W800)`: quantifies transition-induced discontinuity and added reflection/ripple (`W800` = 0.8 mm trace width).
+- `2L_06 - CPWG 50 Ohm + vias + return path (W800)`: checks improvement from reinforcing return-current continuity around transitions (`W800` = 0.8 mm trace width).
+- `2L_07 - CPWG 50 Ohm + GND discontinuity (slot) (W800)`: measures degradation caused by intentional return-path interruption (`W800` = 0.8 mm trace width).
 
 <a id="board-2l-schematic"></a>
 #### Schematic
@@ -115,6 +117,8 @@ Coupon variations and objectives:
 <a id="board-2l-stackup"></a>
 #### Stackup
 <img src="./images/stackup_2l.png" alt="2-layer stackup" width="700">
+
+The bottom layer includes copper polygons connected to GND.
 
 <a id="board-2l-layout"></a>
 #### PCB layout views
@@ -141,13 +145,14 @@ Main characteristics:
 - Intended as the higher-control reference platform for RF/high-speed SI measurements.
 
 Coupon variations and objectives:
-- `4L_01 - Microstrip 50 Ohm baseline (W350)`: baseline reference for controlled-impedance microstrip on 4L.
-- `4L_02 - CPWG 50 Ohm baseline (W285/G200)`: baseline CPWG reference in 4L.
-- `4L_03 - CPWG 50 Ohm (W210/G120)`: CPWG geometry variant to compare field confinement and tolerance sensitivity versus G200.
-- `4L_04 - CPWG 50 Ohm + matching (W285/G200)`: evaluates matching strategy impact relative to CPWG baseline.
-- `4L_05 - Microstrip 50 Ohm + vias`: quantifies via-transition discontinuity impact.
-- `4L_06 - Microstrip 50 Ohm + vias + return path`: verifies reflection/ripple reduction with improved return-current path near transitions.
-- `4L_07 - Microstrip 50 Ohm + GND discontinuity (slot on L2)`: measures sensitivity to intentional plane interruption in an inner reference layer.
+- Notation guide: `W` = trace width and `G` = gap; when two `W` values are present, the first refers to the outer layer and the second to the inner layer.
+- `4L_01 - Microstrip 50 Ohm baseline (W350)`: baseline reference for controlled-impedance microstrip on 4L (`W350` = 0.35 mm trace width).
+- `4L_02 - CPWG 50 Ohm baseline (W285/G200)`: baseline CPWG reference in 4L (`W285/G200` = 0.285 mm trace width and 0.2 mm gap).
+- `4L_03 - CPWG 50 Ohm (W210/G120)`: CPWG geometry variant to compare field confinement and tolerance sensitivity versus G200 (`W210/G120` = 0.21 mm trace width and 0.12 mm gap).
+- `4L_04 - CPWG 50 Ohm + matching (W285/G200)`: evaluates matching strategy impact relative to CPWG baseline (`W285/G200` = 0.285 mm trace width and 0.2 mm gap).
+- `4L_05 - Microstrip 50 Ohm + vias (W350/W300)`: quantifies via-transition discontinuity impact (`W350/W300` = 0.35 mm trace width on the outer layer and 0.30 mm trace width on the inner layer).
+- `4L_06 - Microstrip 50 Ohm + vias + return path (W350/W300)`: verifies reflection/ripple reduction with improved return-current path near transitions (`W350/W300` = 0.35 mm trace width on the outer layer and 0.30 mm trace width on the inner layer).
+- `4L_07 - Microstrip 50 Ohm + GND discontinuity (slot on L2) (W350)`: measures sensitivity to intentional plane interruption in an inner reference layer (`W350` = 0.35 mm trace width).
 
 <a id="board-4l-schematic"></a>
 #### Schematic
@@ -269,5 +274,14 @@ Main functions used/available (per official page):
 For complete test execution, measurement order, acceptance criteria, and result table, see:
 
 - [README-tests.md](./README-tests.md) (English)
+
+<a id="license"></a>
+## License
+This repository uses different licenses by content type:
+
+- Hardware design files (PCB, schematics, manufacturing outputs): CERN-OHL-P v2.0 (see [LICENSE-HARDWARE](./LICENSE-HARDWARE))
+- Documentation (texts, diagrams, images): CC BY 4.0 (see [LICENSE-DOCS](./LICENSE-DOCS))
+
+Attribution: when using or adapting this work, please credit "Marcos Vinicius Gonçalves" and include a link to this repository.
 
 

@@ -17,6 +17,7 @@
 - [Estrutura do repositório](#repository-structure)
 - [Links dos projetos](#project-links)
 - [Testes (Roteiro e Relatório)](#tests-script-report)
+- [Licença](#license)
 
 <a id="overview"></a>
 ## Visão geral
@@ -100,13 +101,14 @@ Características principais:
 - Útil para avaliar trade-offs entre manufaturabilidade/custo e estabilidade de desempenho RF/high speed.
 
 Variações de cupons e objetivos:
-- `2L_01 - Microstrip 50 Ohm (W2700)`: referência baseline do comportamento de microstrip em 2 camadas.
-- `2L_02 - CPWG 50 Ohm baseline (W800/G200)`: referência baseline de CPWG em 2 camadas.
-- `2L_03 - CPWG 50 Ohm (W380/G120)`: variante geométrica de CPWG para comparar confinamento e sensibilidade de processo versus G200.
-- `2L_04 - CPWG 50 Ohm + matching (W800/G200)`: avalia o impacto da estratégia de matching em relação ao CPWG baseline.
-- `2L_05 - CPWG 50 Ohm + vias`: quantifica descontinuidade de transição e reflexão/ripple adicionais.
-- `2L_06 - CPWG 50 Ohm + vias + return path`: verifica melhoria ao reforçar continuidade de corrente de retorno nas transições.
-- `2L_07 - CPWG 50 Ohm + descontinuidade de GND (slot)`: mede degradação causada por interrupção intencional do caminho de retorno.
+- Leitura da notação: `W` = largura da trilha e `G` = gap; quando houver dois `W`, o primeiro refere-se à layer externa e o segundo à layer interna.
+- `2L_01 - Microstrip 50 Ohm (W2700)`: referência baseline do comportamento de microstrip em 2 camadas (`W2700` = largura da trilha de 2,7 mm).
+- `2L_02 - CPWG 50 Ohm baseline (W800/G200)`: referência baseline de CPWG em 2 camadas (`W800/G200` = largura da trilha de 0,8 mm e gap de 0,2 mm).
+- `2L_03 - CPWG 50 Ohm (W380/G120)`: variante geométrica de CPWG para comparar confinamento e sensibilidade de processo versus G200 (`W380/G120` = largura da trilha de 0,38 mm e gap de 0,12 mm).
+- `2L_04 - CPWG 50 Ohm + matching (W800/G200)`: avalia o impacto da estratégia de matching em relação ao CPWG baseline (`W800/G200` = largura da trilha de 0,8 mm e gap de 0,2 mm).
+- `2L_05 - CPWG 50 Ohm + vias (W800)`: quantifica descontinuidade de transição e reflexão/ripple adicionais (`W800` = largura da trilha de 0,8 mm).
+- `2L_06 - CPWG 50 Ohm + vias + return path (W800)`: verifica melhoria ao reforçar continuidade de corrente de retorno nas transições (`W800` = largura da trilha de 0,8 mm).
+- `2L_07 - CPWG 50 Ohm + descontinuidade de GND (slot) (W800)`: mede degradação causada por interrupção intencional do caminho de retorno (`W800` = largura da trilha de 0,8 mm).
 
 <a id="board-2l-schematic"></a>
 #### Esquemático
@@ -115,6 +117,8 @@ Variações de cupons e objetivos:
 <a id="board-2l-stackup"></a>
 #### Stackup
 <img src="./images/stackup_2l.png" alt="Stackup 2 camadas" width="700">
+
+A layer bottom possui polígonos de cobre conectados ao GND.
 
 <a id="board-2l-layout"></a>
 #### Vistas de layout PCB
@@ -141,13 +145,14 @@ Características principais:
 - Funciona como plataforma de referência de maior controle para medições de integridade de sinal RF/high speed.
 
 Variações de cupons e objetivos:
-- `4L_01 - Microstrip 50 Ohm baseline (W350)`: referência baseline de microstrip com impedância controlada em 4 camadas.
-- `4L_02 - CPWG 50 Ohm baseline (W285/G200)`: referência baseline de CPWG em 4 camadas.
-- `4L_03 - CPWG 50 Ohm (W210/G120)`: variante geométrica de CPWG para comparar confinamento de campo e sensibilidade de tolerância versus G200.
-- `4L_04 - CPWG 50 Ohm + matching (W285/G200)`: avalia o impacto da estratégia de matching em relação ao CPWG baseline.
-- `4L_05 - Microstrip 50 Ohm + vias`: quantifica o impacto da descontinuidade de transição por via.
-- `4L_06 - Microstrip 50 Ohm + vias + return path`: verifica redução de reflexão/ripple com melhoria do caminho de retorno próximo das transições.
-- `4L_07 - Microstrip 50 Ohm + descontinuidade de GND (slot no L2)`: mede sensibilidade à interrupção intencional do plano de referência interno.
+- Leitura da notação: `W` = largura da trilha e `G` = gap; quando houver dois `W`, o primeiro refere-se à layer externa e o segundo à layer interna.
+- `4L_01 - Microstrip 50 Ohm baseline (W350)`: referência baseline de microstrip com impedância controlada em 4 camadas (`W350` = largura da trilha de 0,35 mm).
+- `4L_02 - CPWG 50 Ohm baseline (W285/G200)`: referência baseline de CPWG em 4 camadas (`W285/G200` = largura da trilha de 0,285 mm e gap de 0,2 mm).
+- `4L_03 - CPWG 50 Ohm (W210/G120)`: variante geométrica de CPWG para comparar confinamento de campo e sensibilidade de tolerância versus G200 (`W210/G120` = largura da trilha de 0,21 mm e gap de 0,12 mm).
+- `4L_04 - CPWG 50 Ohm + matching (W285/G200)`: avalia o impacto da estratégia de matching em relação ao CPWG baseline (`W285/G200` = largura da trilha de 0,285 mm e gap de 0,2 mm).
+- `4L_05 - Microstrip 50 Ohm + vias (W350/W300)`: quantifica o impacto da descontinuidade de transição por via (`W350/W300` = largura da trilha de 0,35 mm na layer externa e 0,30 mm na layer interna).
+- `4L_06 - Microstrip 50 Ohm + vias + return path (W350/W300)`: verifica redução de reflexão/ripple com melhoria do caminho de retorno próximo das transições (`W350/W300` = largura da trilha de 0,35 mm na layer externa e 0,30 mm na layer interna).
+- `4L_07 - Microstrip 50 Ohm + descontinuidade de GND (slot no L2) (W350)`: mede sensibilidade à interrupção intencional do plano de referência interno (`W350` = largura da trilha de 0,35 mm).
 
 <a id="board-4l-schematic"></a>
 #### Esquemático
@@ -270,4 +275,11 @@ Para execução completa dos testes, ordem de medição, critérios de avaliaç�
 
 - [README-testes.md](./README-testes.md) (Português)
 
+<a id="license"></a>
+## Licença
+Este repositório usa licenças diferentes por tipo de conteúdo:
 
+- Arquivos de hardware (PCB, esquemáticos, saídas de fabricação): CERN-OHL-P v2.0 (ver [LICENSE-HARDWARE](./LICENSE-HARDWARE))
+- Documentação (textos, diagramas, imagens): CC BY 4.0 (ver [LICENSE-DOCS](./LICENSE-DOCS))
+
+Atribuição: ao usar ou adaptar este material, por favor credite "Marcos Vinicius Gonçalves" e inclua o link deste repositório.

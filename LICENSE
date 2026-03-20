@@ -1,0 +1,7 @@
+This repository is licensed with different licenses by content type:
+
+- Hardware design files (PCB, schematics, manufacturing outputs): CERN-OHL-P-2.0 (see LICENSE-HARDWARE)
+- Documentation (texts, diagrams, images): CC-BY-4.0 (see LICENSE-DOCS)
+
+Attribution request:
+Please credit "Marcos Vinicius Gonçalves" and link back to this repository when using or adapting this work.

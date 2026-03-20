@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Signal Integrity - PCB Coupons and Measurements"
+message: "If you use this work, please cite it."
+type: dataset
+authors:
+  - family-names: "Gonçalves"
+    given-names: "Marcos Vinicius"
+repository-code: "https://github.com/marcosviniciusmvg/Signal_Integrity"
+license: "CERN-OHL-P-2.0 / CC-BY-4.0"
