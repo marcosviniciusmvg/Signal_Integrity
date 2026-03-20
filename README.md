@@ -11,6 +11,7 @@
 - [Board design details](#board-design-details)
 - [2-layer board](#board-2l)
 - [4-layer board](#board-4l)
+- [Board production](#board-production)
 - [NanoVNA-F V2 in this project](#nanovna-f-v2)
 - [NanoVNA Saver](#nanovna-saver)
 - [Repository structure](#repository-structure)
@@ -174,6 +175,22 @@ Layer 2 and the bottom layer include copper polygons connected to GND.
 <a id="board-4l-3d"></a>
 #### 3D view
 <img src="./images/pcb_3d_top_4l.png" alt="4-layer 3D top" width="700">
+
+<a id="board-production"></a>
+## Board production
+To enable coupon testing, 5 PCB prototypes were manufactured.
+Fabrication was carried out by [JLCPCB](https://jlcpcb.com).
+
+<table>
+  <tr>
+    <td><img src="./images/pictures/jlc_box.jpeg" alt="JLCPCB box" width="340"></td>
+    <td><img src="./images/pictures/jlc_box_open.jpeg" alt="JLCPCB box open" width="340"></td>
+  </tr>
+</table>
+
+<img src="./images/pictures/pcbs_2l_4l.jpeg" alt="2L and 4L PCBs" width="700">
+
+<img src="./images/pictures/pcbs_2l_4l_un.jpeg" alt="2L and 4L PCBs (detail)" width="700">
 
 <a id="nanovna-f-v2"></a>
 ## NanoVNA-F V2 in this project
