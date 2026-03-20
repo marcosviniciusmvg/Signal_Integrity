@@ -11,6 +11,7 @@
 - [Detalhes do projeto das placas](#board-design-details)
 - [Placa 2 camadas](#board-2l)
 - [Placa 4 camadas](#board-4l)
+- [Produção das placas](#board-production)
 - [NanoVNA-F V2 neste projeto](#nanovna-f-v2)
 - [NanoVNA Saver](#nanovna-saver)
 - [Estrutura do repositório](#repository-structure)
@@ -174,6 +175,22 @@ A Layer 2 e a layer bottom possuem polígonos de cobre conectados ao GND.
 <a id="board-4l-3d"></a>
 #### Vista 3D
 <img src="./images/pcb_3d_top_4l.png" alt="4 camadas 3D top" width="700">
+
+<a id="board-production"></a>
+## Produção das placas
+Para permitir os testes dos cupons, foram produzidos 5 protótipos de placas.
+A fabricação foi realizada pela [JLCPCB](https://jlcpcb.com).
+
+<table>
+  <tr>
+    <td><img src="./images/pictures/jlc_box.jpeg" alt="Caixa da JLCPCB" width="340"></td>
+    <td><img src="./images/pictures/jlc_box_open.jpeg" alt="Caixa da JLCPCB aberta" width="340"></td>
+  </tr>
+</table>
+
+<img src="./images/pictures/pcbs_2l_4l.jpeg" alt="Placas 2L e 4L" width="700">
+
+<img src="./images/pictures/pcbs_2l_4l_un.jpeg" alt="Placas 2L e 4L (detalhe)" width="700">
 
 <a id="nanovna-f-v2"></a>
 ## NanoVNA-F V2 neste projeto
